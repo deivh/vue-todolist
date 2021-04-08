@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- JQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <!-- VueJS -->
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+        <title>Vue TodoList</title>
+        <!-- FontAwesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/script.js" charset="utf-8"></script>
+    </head>
+    <body>
+        <div id="app" class="container">
+            <div class="logoBool">
+                <img src="img/logo.png" alt="Logo Boolean">
+            </div>
+           <div class="box">
+               <input type="text" v-model="newTodo" class= "todo">
+               <button v-on:click="createTodo" class= "fas fa-circle hidden"> Aggiungi</button>
+            </div>         
+            <div class="todoAll-container">
+                <ul>
+                    <li v-for="(todo, index) in todoAll" class="todo">
+                        {{ todo}}
+                        <i @click="deleteTodo(index)" class="fas fa-times cursor-pointer"></i>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>
